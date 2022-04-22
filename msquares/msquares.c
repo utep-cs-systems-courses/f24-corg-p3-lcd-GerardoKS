@@ -12,7 +12,7 @@ Pos positions[] = {
   {10, screenHeight-10}, 	/* lower left */
   {screenWidth - 10, screenHeight-10}, /* lower right */
   {screenWidth - 10, 10},	       /* upper right */
-  {screenWidth/2, screenHeight/2}
+  {screenWidth/2, screenHeight/2}      /* middle */
 };
 #define NUM_POSITIONS 5
 
@@ -28,7 +28,7 @@ char current_position = 0, current_color = 0;
 
 #define SWITCHES 15
 
-int redraw_screen;
+int redrawScreen = 1;
 
 static char 
 switch_update_interrupt_sense()
@@ -59,7 +59,7 @@ switch_interrupt_handler()
   switches = ~p2val & SWITCHES;
 
   if (switches & SWITCHES) { 	/* a switch is depresssed */
-    redraw_screen = 1;
+    redrawScreen = 1;
     for (char swNum = 0; swNum < 4; swNum++) { /* respond to lowest button pressed */
       int swFlag = 1 << swNum;
       if (switches & swFlag) {
@@ -118,7 +118,7 @@ void
 update_shape()
 {
   static char last_position = 0, last_color = 0;
-  redraw_screen = 0;
+  redrawScreen = 0;
   int pos = current_position, color = current_color;
 
   if (pos == last_position && color == last_color) /* nothing to redraw */
