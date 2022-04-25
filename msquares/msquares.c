@@ -119,8 +119,11 @@ update_shape()
 {
   static char last_position = 0, last_color = 0;
   redrawScreen = 0;
-  int pos = current_position, color = current_color;
-
+  int pos, color;
+  and_sr(~8);  // mask interrupts (GIE = 0)
+  pos = current_position;	/* read state variables */
+  color = current_color;
+  or_sr(8); // unmask interrupts
   if (pos == last_position && color == last_color) /* nothing to redraw */
     return;
 
