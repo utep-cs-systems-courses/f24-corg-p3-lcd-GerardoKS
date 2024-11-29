@@ -1,0 +1,6 @@
+#include "Display.h"
+
+void updateDisplay(u_char playerUpdatedCol,u_char playerUpdatedRow){
+  init_display();
+  updateLocation(playerUpdatedCol,playerUpdatedRow);
+}
