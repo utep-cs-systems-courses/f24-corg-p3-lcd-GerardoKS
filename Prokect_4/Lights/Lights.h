@@ -1,0 +1,2 @@
+#define LED_VALIDPATH 1
+#define LED_INVALIDPATH 32

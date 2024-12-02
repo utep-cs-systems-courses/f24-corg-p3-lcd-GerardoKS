@@ -43,6 +43,9 @@ extern int *BARRIER_ARRAY;
 extern int colExitMaze;
 extern int rowExitMaze;
 
+extern char lastButton;
+extern char total;
+extern char moves;
 void updateDisplay(u_char switch_pressed);
 void init_display();
 void updateLocation(u_char switch_pressed);

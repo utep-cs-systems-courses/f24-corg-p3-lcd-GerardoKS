@@ -47,16 +47,16 @@ switch_init()			/* setup switch */
 }
 
 int switches = 0;
-
+/*
 void
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
   switches = ~p2val & SWITCHES;
 
-  if (switches & SWITCHES) { 	/* a switch is depresssed */
+  if (switches & SWITCHES) { 	// a switch is depresssed //
     redrawScreen = 1;
-    for (char swNum = 0; swNum < 4; swNum++) { /* respond to lowest button pressed */
+    for (char swNum = 0; swNum < 4; swNum++) { // respond to lowest button pressed //
       int swFlag = 1 << swNum;
       if (switches & swFlag) {
 	current_position = swNum;
@@ -64,7 +64,7 @@ switch_interrupt_handler()
       }
     }
   }
-}
+  }*/
 /*
 void wdt_c_handler()
 {

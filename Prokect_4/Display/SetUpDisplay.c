@@ -60,7 +60,8 @@ void init_display(){
   BARRIER_ARRAY[11] = R3;
   drawRectOutline(C3,R3, W -1, H -1, COLOR_RED);
   drawRectOutline(C4,R3, W -1, H -1, COLOR_RED);
-  drawRectOutline(C0,R4, W -1, H -1, COLOR_RED);
+  //drawRectOutline(C0,R4, W -1, H -1, COLOR_RED);
+  fillRectangle(C0,R4, W -1, H -1, COLOR_WHITE);  
   //drawRectOutline(C1,R4, W -1 , H, COLOR_BLACK);
   fillRectangle(C1,R4, W -1, H -1, COLOR_RED);
   BARRIER_ARRAY[12] = C1;
